@@ -4,87 +4,54 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] private float movementSpeed = 2f;
+    [SerializeField] private float _movementSpeed = 2f;
+    [SerializeField] Rigidbody2D rb;
+    private Vector2 _movementDirection;
+    private Vector2 _movementPos;
 
-    private bool canDash = true;
-    private bool isDashing;
-    [SerializeField] private float dashingPower = 25f;
-    [SerializeField] float dashingTime = 0.2f;
-    [SerializeField] private float dashingCooldown = 1f;
+    [Header("Dash setting")]
+    private bool _canDash = true;
+    private bool _isDashing;
+    [SerializeField] private float _dashingPower = 25f;
+    [SerializeField] float dashingTime = 1f;
+    [SerializeField] private float _dashingCooldown = 1f;
 
-    private Rigidbody2D rb;
-
-    private Vector2 movementDirection;
-    // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if (isDashing)
+        if (_isDashing)
         {
             return;
         }
-
-        movementDirection = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
-
-        if (Input.GetKeyDown(KeyCode.LeftShift) && canDash)
+        float moveX = Input.GetAxis("Horizontal");
+        float moveY = Input.GetAxis("Vertical");
+        if (Input.GetKeyDown(KeyCode.LeftShift))
         {
             StartCoroutine(Dash());
         }
+        _movementDirection = new Vector2(moveX,moveY).normalized;
     }
 
     void FixedUpdate()
     {
-        if (isDashing)
+        if (_isDashing)
         {
             return;
         }
 
-        rb.velocity = movementDirection * movementSpeed;
-    }
-
-    /*private IEnumerator Dash()
-    {
-        canDash = false;
-        isDashing = true;
-        rb.velocity = new Vector2(transform.position.x * dashingPower, 0f);
-        rb.velocity = new Vector2(transform.position.y * dashingPower, 0f);
-        yield return new WaitForSeconds(dashingTime);
-        isDashing = false;
-        yield return new WaitForSeconds(dashingCooldown);
-        canDash = true;
+        rb.velocity = new Vector2(_movementDirection.x * _movementSpeed, _movementDirection.y * _movementSpeed);
     }
     */
     private IEnumerator Dash()
     {
-        canDash = false;
-        isDashing = true;
-        if(Input.GetKeyDown(KeyCode.D))
-        {
-            rb.velocity = new Vector2(transform.localScale.x * dashingPower, 0f);
-        }
-        else if(Input.GetKeyDown(KeyCode.S))
-        {
-            rb.velocity = new Vector2(-transform.localScale.y * dashingPower, 0f);
-        }
-        else if(Input.GetKeyDown(KeyCode.A))
-        {
-            rb.velocity = new Vector2(-transform.localScale.x * dashingPower, 0f);
-        }
-        else if (Input.GetKeyDown(KeyCode.W))
-        {
-            rb.velocity = new Vector2(transform.localScale.y * dashingPower, 0f);
-        }
+        _isDashing = true;
+        rb.velocity = new Vector2(_movementDirection.x * _dashingPower, _movementDirection.y * _dashingPower);
         yield return new WaitForSeconds(dashingTime);
-        isDashing = false;
-        yield return new WaitForSeconds(dashingCooldown);
-        canDash = true;
+        _isDashing = false; 
     }
-
-
 
 }
