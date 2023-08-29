@@ -390,8 +390,8 @@ GameObject:
   m_Component:
   - component: {fileID: 676946053}
   - component: {fileID: 676946052}
-  - component: {fileID: 676946051}
   - component: {fileID: 676946050}
+  - component: {fileID: 676946054}
   m_Layer: 0
   m_Name: Chest
   m_TagString: Untagged
@@ -420,19 +420,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &676946051
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 676946049}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a331e50cded2e414ba7c349ea92ef698, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isOpen: 0
 --- !u!212 &676946052
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -501,6 +488,19 @@ Transform:
   - {fileID: 2081188766}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &676946054
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 676946049}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a331e50cded2e414ba7c349ea92ef698, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isOpen: 0
 --- !u!1001 &743104478
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -511,11 +511,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1227057564697209655, guid: fec49123ce97ce141b37ebc7508e67e3, type: 3}
       propertyPath: m_Radius
-      value: 0.69936085
+      value: 0.7167959
       objectReference: {fileID: 0}
     - target: {fileID: 1227057564697209655, guid: fec49123ce97ce141b37ebc7508e67e3, type: 3}
       propertyPath: m_Offset.x
-      value: 0.012724876
+      value: 0.03015995
       objectReference: {fileID: 0}
     - target: {fileID: 1375249068641722694, guid: fec49123ce97ce141b37ebc7508e67e3, type: 3}
       propertyPath: interactkey
@@ -532,7 +532,7 @@ PrefabInstance:
     - target: {fileID: 1375249068641722694, guid: fec49123ce97ce141b37ebc7508e67e3, type: 3}
       propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 676946051}
+      objectReference: {fileID: 676946054}
     - target: {fileID: 1375249068641722694, guid: fec49123ce97ce141b37ebc7508e67e3, type: 3}
       propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -543,7 +543,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1375249068641722694, guid: fec49123ce97ce141b37ebc7508e67e3, type: 3}
       propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: ItemController, Assembly-CSharp
+      value: ChestController, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 1375249068641722694, guid: fec49123ce97ce141b37ebc7508e67e3, type: 3}
       propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -760,11 +760,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29f3d1f1b9d70734c9de6c5fe66dc498, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _movementSpeed: 2
+  _movementSpeed: 3
   rb: {fileID: 0}
   _dashingPower: 9
   dashingTime: 0.2
-  _dashingCooldown: 1
+  _dashingCooldown: 5
 --- !u!212 &1129167742
 SpriteRenderer:
   m_ObjectHideFlags: 0

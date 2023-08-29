@@ -18,6 +18,7 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
+        _canDash = true;
         rb = GetComponent<Rigidbody2D>();
     }
 
@@ -29,9 +30,10 @@ public class PlayerController : MonoBehaviour
         }
         float moveX = Input.GetAxis("Horizontal");
         float moveY = Input.GetAxis("Vertical");
-        if (Input.GetKeyDown(KeyCode.LeftShift))
+        if (Input.GetKeyDown(KeyCode.LeftShift) && _canDash)
         {
             StartCoroutine(Dash());
+
         }
         _movementDirection = new Vector2(moveX,moveY).normalized;
     }
@@ -48,10 +50,14 @@ public class PlayerController : MonoBehaviour
     
     private IEnumerator Dash()
     {
+        _canDash = false;
         _isDashing = true;
         rb.velocity = new Vector2(_movementDirection.x * _dashingPower, _movementDirection.y * _dashingPower);
         yield return new WaitForSeconds(dashingTime);
         _isDashing = false; 
+
+        yield return new WaitForSeconds(_dashingCooldown);
+        _canDash = true;
     }
 
 }
