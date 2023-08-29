@@ -45,7 +45,7 @@ public class PlayerController : MonoBehaviour
 
         rb.velocity = new Vector2(_movementDirection.x * _movementSpeed, _movementDirection.y * _movementSpeed);
     }
-    */
+    
     private IEnumerator Dash()
     {
         _isDashing = true;
