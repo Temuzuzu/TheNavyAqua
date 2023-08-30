@@ -32,7 +32,7 @@ public class Interaction : MonoBehaviour
             Debug.Log("player is now in range");
         }
     }
-    private void OnCollisionExit2D(Collision2D collision)
+    private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
