@@ -6,6 +6,9 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField] private float _movementSpeed = 2f;
     [SerializeField] Rigidbody2D rb;
+    private float moveX;
+    private float moveY;
+    private bool facingRight = true;
     private Vector2 _movementDirection;
     private Vector2 _movementPos;
 
@@ -28,8 +31,8 @@ public class PlayerController : MonoBehaviour
         {
             return;
         }
-        float moveX = Input.GetAxis("Horizontal");
-        float moveY = Input.GetAxis("Vertical");
+        moveX = Input.GetAxis("Horizontal");
+        moveY = Input.GetAxis("Vertical");
         if (Input.GetKeyDown(KeyCode.LeftShift) && _canDash)
         {
             StartCoroutine(Dash());
@@ -40,12 +43,30 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
+        moveX = Input.GetAxis("Horizontal");
+        moveY = Input.GetAxis("Vertical");
         if (_isDashing)
         {
             return;
         }
 
         rb.velocity = new Vector2(_movementDirection.x * _movementSpeed, _movementDirection.y * _movementSpeed);
+        
+        if(moveX > 0 && !facingRight)
+        {
+            Flip();
+        }
+        if(moveX < 0 && facingRight)
+        {
+            Flip();
+        }
+    }
+    private void Flip()
+    {
+        Vector3 currentScale = gameObject.transform.localScale;
+        currentScale.x *= -1;
+        gameObject.transform.localScale = currentScale;
+        facingRight = !facingRight;
     }
     
     private IEnumerator Dash()
