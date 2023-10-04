@@ -2293,7 +2293,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthBar: {fileID: 2146237735}
-  healthAmount: 1500
+  healthAmount: 6000
 --- !u!4 &1400864554
 Transform:
   m_ObjectHideFlags: 0
