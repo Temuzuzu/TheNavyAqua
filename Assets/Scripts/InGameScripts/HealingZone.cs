@@ -13,9 +13,10 @@ public class HealingZone : MonoBehaviour
      if (collision.gameObject.CompareTag("Player"))
         {
             StartCoroutine("Heal");
+            
         }
     }
-    private void OnTriggerExit2D(Collider2D collision)
+    void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
@@ -24,11 +25,11 @@ public class HealingZone : MonoBehaviour
     }
     IEnumerator Heal()
     {
-        for(float currentHealth = HealthManager.healthAmount; currentHealth <= 1; currentHealth += 0.0005f)
+        for(float currentHealth = HealthManager.healthAmount; currentHealth < 6000; currentHealth += 20f)
         {
             HealthManager.healthAmount = currentHealth;
             yield return new WaitForSeconds (Time.deltaTime);
         }
-        HealthManager.healthAmount = 6000f;
+      
     }
 }

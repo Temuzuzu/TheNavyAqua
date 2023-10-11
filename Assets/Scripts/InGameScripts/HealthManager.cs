@@ -23,7 +23,7 @@ public class HealthManager : MonoBehaviour
         }
     }
     public void TakeDamage()
-    {
+    {    
         healthAmount--;
         healthBar.fillAmount = healthAmount/6000;
     }
