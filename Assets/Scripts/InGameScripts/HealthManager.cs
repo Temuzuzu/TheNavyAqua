@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class HealthManager : MonoBehaviour
 {
     public Image healthBar;
-    public float healthAmount = 6000f;
+    public static float healthAmount = 6000f;
     void Start()
     {
         
@@ -23,7 +23,7 @@ public class HealthManager : MonoBehaviour
         }
     }
     public void TakeDamage()
-    {
+    {    
         healthAmount--;
         healthBar.fillAmount = healthAmount/6000;
     }
