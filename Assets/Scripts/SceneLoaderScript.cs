@@ -28,4 +28,10 @@ public class SceneLoaderScript : MonoBehaviour
 
         SceneManager.LoadScene(levelIndex);
     }
+
+    public void Quit()
+    {
+        Debug.Log("Quit");
+        Application.Quit();
+    }
 }
