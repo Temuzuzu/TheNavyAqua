@@ -25,7 +25,7 @@ public class HealingZone : MonoBehaviour
     }
     IEnumerator Heal()
     {
-        for(float currentHealth = HealthManager.healthAmount; currentHealth < 6000; currentHealth += 20f)
+        for(float currentHealth = HealthManager.healthAmount; currentHealth < 15000; currentHealth += 20f)
         {
             HealthManager.healthAmount = currentHealth;
             yield return new WaitForSeconds (Time.deltaTime);
