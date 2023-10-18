@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,6 +7,7 @@ using UnityEngine.UI;
 
 public class HealthManager : MonoBehaviour
 {
+    public static event Action onPlayerDeath;
     public Image healthBar;
     public static float healthAmount = 15000f;
     void Start()
@@ -19,7 +21,7 @@ public class HealthManager : MonoBehaviour
         TakeDamage();
         if (healthAmount < 0)
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            onPlayerDeath?.Invoke();
         }
     }
     public void TakeDamage()

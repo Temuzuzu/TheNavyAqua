@@ -19,10 +19,21 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float dashingTime = 1f;
     [SerializeField] private float _dashingCooldown = 1f;
 
+    private void OnEnable()
+    {
+        HealthManager.onPlayerDeath += DisablePlayerMovement;
+        
+    }
+    private void OnDisable()
+    {
+        HealthManager.onPlayerDeath -= DisablePlayerMovement;
+        
+    }
     void Start()
     {
         _canDash = true;
         rb = GetComponent<Rigidbody2D>();
+        EnablePlayerMovement();
     }
 
     void Update()
@@ -80,5 +91,12 @@ public class PlayerController : MonoBehaviour
         yield return new WaitForSeconds(_dashingCooldown);
         _canDash = true;
     }
-
+    private void DisablePlayerMovement()
+    {
+        rb.bodyType = RigidbodyType2D.Static;
+    }
+    private void EnablePlayerMovement()
+    {
+        rb.bodyType = RigidbodyType2D.Dynamic;
+    }
 }
