@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class LuggetLock : MonoBehaviour
 {
-    public bool interactable = true;
+    public bool interactable = false;
     public GameObject lockCanvas;
     public Text[] text;
 
@@ -13,6 +13,7 @@ public class LuggetLock : MonoBehaviour
     public string[] lockCharaterChoices;
     public int[] _lockCharaterNumber;
     private string _insertedPassword;
+    public GameObject prefab;
 
     // Start is called before the first frame update
     void Start()
@@ -50,6 +51,7 @@ public class LuggetLock : MonoBehaviour
     public void Unlock()
     {
         Debug.Log("Unlocked");
+        Instantiate(prefab, transform.position, Quaternion.identity);
     }
 
     public void UpdateUI()
@@ -64,12 +66,20 @@ public class LuggetLock : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            Interact();
+        }
     }
 
-    private void OnMouseDown()
+    public void OnTriggerEnter2D(Collider2D collision)
     {
-        Interact();
+        interactable = true;
+    }
+
+    public void OnTriggerExit2D(Collider2D collision)
+    {
+        interactable = false;
     }
 
     public void Interact()

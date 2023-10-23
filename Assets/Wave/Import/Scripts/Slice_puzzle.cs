@@ -9,6 +9,7 @@ public class Slice_puzzle : MonoBehaviour
     private Camera _camera;
     public CoinCounter coinCounter;
     private bool hasEnoughCoins = false;
+    public GameObject lockCanvas;
 
     // Start is called before the first frame update
     void Start()
@@ -22,6 +23,7 @@ public class Slice_puzzle : MonoBehaviour
         if (coinCounter.currentCoins >= 8)
         {
             hasEnoughCoins = true;
+            lockCanvas.SetActive(true);
         }
 
         if (hasEnoughCoins == true)
