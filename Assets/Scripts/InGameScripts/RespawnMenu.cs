@@ -30,6 +30,7 @@ public class RespawnMenu : MonoBehaviour
     }
     public void GoToMainMenu()
     {
+        
         SceneManager.LoadScene("MainMenu");
     }
 }

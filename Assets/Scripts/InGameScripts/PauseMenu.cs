@@ -8,6 +8,7 @@ public class PauseMenu : MonoBehaviour
 {
     public static bool GameIsPaused = false;
     public GameObject pauseMenuUI;
+    Rigidbody2D rb;
     
     private void Start()
     {
@@ -41,6 +42,7 @@ public class PauseMenu : MonoBehaviour
     }
     public void MainMenu()
     {
+        Time.timeScale = 1.0f;
         SceneManager.LoadScene("MainMenu");
     }
 

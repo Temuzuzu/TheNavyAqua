@@ -93,7 +93,7 @@ public class PlayerController : MonoBehaviour
     }
     private void DisablePlayerMovement()
     {
-        Time.timeScale = 0f;
+        rb.bodyType = RigidbodyType2D.Static;
     }
     private void EnablePlayerMovement()
     {
