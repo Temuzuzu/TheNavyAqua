@@ -6,6 +6,12 @@ using UnityEngine.SceneManagement;
 public class RespawnMenu : MonoBehaviour
 {
     public GameObject retryMenu;
+    private GameMaster gm;
+    private Rigidbody2D rb;
+    private void Start()
+    {
+        
+    }
     private void OnEnable()
     {
         HealthManager.onPlayerDeath += EnableRetryMenu;      
@@ -30,7 +36,6 @@ public class RespawnMenu : MonoBehaviour
     }
     public void GoToMainMenu()
     {
-        
         SceneManager.LoadScene("MainMenu");
     }
 }

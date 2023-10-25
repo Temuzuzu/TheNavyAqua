@@ -4,12 +4,10 @@ using UnityEngine;
 
 public class HealingZone : MonoBehaviour
 {
-    Collider2D Collider2D;
     private void Start()
     {
         GetComponent<HealthManager>();
     }
-    
     void OnTriggerEnter2D(Collider2D collision)
     {
      if (collision.gameObject.CompareTag("Player"))
