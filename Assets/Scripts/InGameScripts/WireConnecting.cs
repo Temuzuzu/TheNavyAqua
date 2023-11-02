@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
+using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class WireConnecting : MonoBehaviour
 {
@@ -10,11 +12,18 @@ public class WireConnecting : MonoBehaviour
     private void Start()
     {
         int rand = Random.Range(0,rotations.Length);
-        transform.eulerAngles = new Vector3(0,0,rand);
+        transform.eulerAngles = new Vector3(0,0,rotations[rand]);
+    }
+
+    private void Update()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            transform.Rotate(new Vector3(0, 0, 90));
+        }
     }
 
     private void OnMouseDown()
     {
-        transform.Rotate(new Vector3(0, 0, 90));
     }
 }
