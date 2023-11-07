@@ -1140,7 +1140,7 @@ MonoBehaviour:
   correctRotation:
   - 0
   - 180
-  isPlaced: 1
+  isPlaced: 0
 --- !u!114 &351969036
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2308,7 +2308,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   correctRotation:
   - 0
-  isPlaced: 1
+  isPlaced: 0
 --- !u!114 &618421202
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2626,16 +2626,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   WiresHolder: {fileID: 1897395898}
-  Wires:
-  - {fileID: 836052318}
-  - {fileID: 618421199}
-  - {fileID: 1081057901}
-  - {fileID: 351969033}
-  - {fileID: 1831798380}
-  - {fileID: 2141417097}
-  - {fileID: 1517409797}
-  totalWires: 7
-  correctWires: 7
+  Wires: []
+  totalWires: 0
+  correctWires: 0
 --- !u!1 &676946049
 GameObject:
   m_ObjectHideFlags: 0
@@ -3306,7 +3299,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   correctRotation:
   - 270
-  isPlaced: 1
+  isPlaced: 0
 --- !u!114 &836052321
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4198,7 +4191,7 @@ MonoBehaviour:
   correctRotation:
   - 0
   - 180
-  isPlaced: 1
+  isPlaced: 0
 --- !u!114 &1081057904
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5902,7 +5895,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   correctRotation:
   - 0
-  isPlaced: 1
+  isPlaced: 0
 --- !u!114 &1517409800
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7233,7 +7226,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   correctRotation:
   - 90
-  isPlaced: 1
+  isPlaced: 0
 --- !u!114 &1831798383
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7766,7 +7759,7 @@ MonoBehaviour:
   correctRotation:
   - 0
   - 180
-  isPlaced: 1
+  isPlaced: 0
 --- !u!114 &2141417100
 MonoBehaviour:
   m_ObjectHideFlags: 0
