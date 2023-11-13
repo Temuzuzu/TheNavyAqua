@@ -12,6 +12,10 @@ public class WireManager : MonoBehaviour
 
     [SerializeField] int correctWires = 0;
 
+    public GameObject lockCanvas;
+    public bool interactable = false;
+    public GameObject prefab;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,7 +32,10 @@ public class WireManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            Interact();
+        }
     }
 
     public void CorrectMove()
@@ -40,6 +47,7 @@ public class WireManager : MonoBehaviour
         if (correctWires == totalWires)
         {
             Debug.Log("Yay win");
+            Instantiate(prefab, transform.position, Quaternion.identity);
         }
     }
 
@@ -47,4 +55,27 @@ public class WireManager : MonoBehaviour
     {
         correctWires -= 1;
     }
+
+    public void Interact()
+    {
+        if (interactable)
+            lockCanvas.SetActive(true);
+    }
+
+    public void StopInteract()
+    {
+        lockCanvas.SetActive(false);
+    }
+
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
+        interactable = true;
+    }
+
+    public void OnTriggerExit2D(Collider2D collision)
+    {
+        interactable = false;
+    }
+
+
 }
