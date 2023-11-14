@@ -9553,7 +9553,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1128543282689988198, guid: b6df5f1a2ff01894cb5b432b2f7a0cd6, type: 3}
       propertyPath: m_Name
-      value: BatChest_1
+      value: WireChest_1
       objectReference: {fileID: 0}
     - target: {fileID: 1218583552108654545, guid: b6df5f1a2ff01894cb5b432b2f7a0cd6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -9595,10 +9595,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6854370104962077588, guid: b6df5f1a2ff01894cb5b432b2f7a0cd6, type: 3}
-      propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.data[1].m_Target
-      value: 
-      objectReference: {fileID: 1129167746}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9612,6 +9608,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2942481648544954118, guid: 78549af069f94c04c8a4f6acf48214d2, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3139073637940727756, guid: 78549af069f94c04c8a4f6acf48214d2, type: 3}
+      propertyPath: prefab
+      value: 
+      objectReference: {fileID: 6154525487968946027, guid: 2512af0f0ca58274b83e02b28ffdaa1e, type: 3}
     - target: {fileID: 4641790335264526798, guid: 78549af069f94c04c8a4f6acf48214d2, type: 3}
       propertyPath: m_LocalPosition.x
       value: 20.13
@@ -9654,7 +9658,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5711800678993722209, guid: 78549af069f94c04c8a4f6acf48214d2, type: 3}
       propertyPath: m_Name
-      value: NoBatChest_1
+      value: PasswordChest_1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
