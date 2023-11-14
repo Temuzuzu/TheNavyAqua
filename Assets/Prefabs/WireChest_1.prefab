@@ -238,7 +238,7 @@ GameObject:
   - component: {fileID: 2187963090647268444}
   - component: {fileID: 8225355896040832394}
   m_Layer: 0
-  m_Name: BatChest_1
+  m_Name: WireChest_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -257,7 +257,7 @@ Transform:
   m_LocalScale: {x: 1.15, y: 1.15, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 2681909493939720369}
+  - {fileID: 5208621906041192960}
   - {fileID: 4876475151601309307}
   - {fileID: 8069447141815626161}
   m_Father: {fileID: 0}
@@ -3293,12 +3293,12 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 4267640494111276222}
   m_SourcePrefab: {fileID: 100100000, guid: fec49123ce97ce141b37ebc7508e67e3, type: 3}
---- !u!4 &2681909493939720369 stripped
+--- !u!4 &5208621906041192960 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7580207498993836643, guid: fec49123ce97ce141b37ebc7508e67e3, type: 3}
   m_PrefabInstance: {fileID: 2412505025564696675}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &4548265901500686852 stripped
+--- !u!1 &5939719876734709941 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8292515923285872854, guid: fec49123ce97ce141b37ebc7508e67e3, type: 3}
   m_PrefabInstance: {fileID: 2412505025564696675}
@@ -3309,7 +3309,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4548265901500686852}
+  m_GameObject: {fileID: 5939719876734709941}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 172d0b5e6169dc149a71fd6957d25157, type: 3}
