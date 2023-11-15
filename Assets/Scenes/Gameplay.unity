@@ -3541,6 +3541,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cointext: {fileID: 1561112140}
   currentCoins: 0
+  totalCoins: 8
 --- !u!114 &519420035
 MonoBehaviour:
   m_ObjectHideFlags: 0
