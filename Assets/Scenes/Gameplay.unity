@@ -4542,6 +4542,7 @@ MonoBehaviour:
   distance: 1.25
   coinCounter: {fileID: 519420034}
   lockCanvas: {fileID: 1427780030}
+  tiles: []
 --- !u!1 &520230693
 GameObject:
   m_ObjectHideFlags: 0
@@ -10746,7 +10747,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7612515357565224731, guid: fa0ec569a7322a943ab2a621c970c30c, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
