@@ -809,6 +809,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: tile slide puzzle
       objectReference: {fileID: 0}
+    - target: {fileID: 2461346695552590458, guid: fa0ec569a7322a943ab2a621c970c30c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3584658145336588281, guid: fa0ec569a7322a943ab2a621c970c30c, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -3461,6 +3465,63 @@ RectTransform:
   m_AnchoredPosition: {x: -152.4, y: 50}
   m_SizeDelta: {x: 50, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1001 &6979932612962967660
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 342416030983266941, guid: d911195bad0159c41ba2c4dd287bd3bf, type: 3}
+      propertyPath: m_Name
+      value: Particle Bubble
+      objectReference: {fileID: 0}
+    - target: {fileID: 3394450664860201749, guid: d911195bad0159c41ba2c4dd287bd3bf, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.27359456
+      objectReference: {fileID: 0}
+    - target: {fileID: 3394450664860201749, guid: d911195bad0159c41ba2c4dd287bd3bf, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.51023185
+      objectReference: {fileID: 0}
+    - target: {fileID: 3394450664860201749, guid: d911195bad0159c41ba2c4dd287bd3bf, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.4368625
+      objectReference: {fileID: 0}
+    - target: {fileID: 3394450664860201749, guid: d911195bad0159c41ba2c4dd287bd3bf, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3394450664860201749, guid: d911195bad0159c41ba2c4dd287bd3bf, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3394450664860201749, guid: d911195bad0159c41ba2c4dd287bd3bf, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3394450664860201749, guid: d911195bad0159c41ba2c4dd287bd3bf, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3394450664860201749, guid: d911195bad0159c41ba2c4dd287bd3bf, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3394450664860201749, guid: d911195bad0159c41ba2c4dd287bd3bf, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3394450664860201749, guid: d911195bad0159c41ba2c4dd287bd3bf, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d911195bad0159c41ba2c4dd287bd3bf, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -3468,3 +3529,4 @@ SceneRoots:
   - {fileID: 805161930}
   - {fileID: 905338715}
   - {fileID: 744180930}
+  - {fileID: 6979932612962967660}
