@@ -19,6 +19,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float dashingTime = 1f;
     [SerializeField] private float _dashingCooldown = 1f;
 
+    public Animator animator;
+
     private void OnEnable()
     {
         HealthManager.onPlayerDeath += DisablePlayerMovement;
@@ -38,6 +40,7 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+     
         if (_isDashing)
         {
             return;
@@ -54,6 +57,7 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
+        animator.SetFloat("MC_Speed", Mathf.Abs(moveX));
         moveX = Input.GetAxis("Horizontal");
         moveY = Input.GetAxis("Vertical");
         if (_isDashing)
