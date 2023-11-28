@@ -57,7 +57,8 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
-        animator.SetFloat("MC_Speed", Mathf.Abs(moveX));
+        animator.SetFloat("MC_Speed01", Mathf.Abs(moveY));
+        
         moveX = Input.GetAxis("Horizontal");
         moveY = Input.GetAxis("Vertical");
         if (_isDashing)
