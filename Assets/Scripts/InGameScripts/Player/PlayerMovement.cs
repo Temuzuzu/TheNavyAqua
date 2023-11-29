@@ -17,6 +17,7 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 _movementInput;
     private Vector2 _smoothedMovementInput;
     private Vector2 _movementInputSmoothVelocity;
+    private Vector2 _moveDirection;
 
     private float moveX;
     private float moveY;
@@ -25,40 +26,47 @@ public class PlayerMovement : MonoBehaviour
 
     public Animator animator;
 
-    [Header("Dash setting")]
-    private bool _canDash = true;
-    private bool _isDashing;
-    [SerializeField] private float _dashingPower = 25f;
-    [SerializeField] float dashingTime = 1f;
-    [SerializeField] private float _dashingCooldown = 1f;
-
+    [Header("Dash Setting")]
+    [SerializeField] float dashSpeed = 10f;
+    [SerializeField] float dashDuration = 1f;
+    [SerializeField] float dashCooldown = 1f;
+    private bool isDashing;
     private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
     }
-    private void Start()
-    {
-        _canDash = true;
-    }
+    
     private void Update()
     {
-        moveX = Input.GetAxis("Horizontal");
-        moveY = Input.GetAxis("Vertical");
-
-        if (_isDashing)
+        if (isDashing)
         {
             return;
         }
-        if (Input.GetKeyDown(KeyCode.LeftShift) && _canDash)
+        moveX = Input.GetAxis("Horizontal");
+        moveY = Input.GetAxis("Vertical");
+
+        if (moveX > 0 && !facingRight)
+        {
+            Flip();
+        }
+        if (moveX < 0 && facingRight)
+        {
+            Flip();
+        }
+        _moveDirection = new Vector2(moveX, moveY).normalized;
+
+        if (Input.GetKeyDown(KeyCode.LeftShift)) 
         {
             StartCoroutine(Dash());
-
         }
-        _movementInput = new Vector2(moveX, moveY).normalized;
     }
 
     private void FixedUpdate()
     {
+        if (isDashing)
+        {
+            return;
+        }
         if (Mathf.Abs(moveX) > 0.1)
         {
 
@@ -86,10 +94,7 @@ public class PlayerMovement : MonoBehaviour
             Flip();
         }
 
-        if (_isDashing)
-        {
-            return;
-        }
+        
     }
 
     private void SetPlayerVelocity()
@@ -101,6 +106,7 @@ public class PlayerMovement : MonoBehaviour
                     0.1f);
 
         _rigidbody.velocity = _smoothedMovementInput * _speed;
+
     }
 
     private void RotateInDirectionOfInput()
@@ -126,17 +132,13 @@ public class PlayerMovement : MonoBehaviour
         gameObject.transform.localScale = currentScale;
         facingRight = !facingRight;
     }
-
+    
     private IEnumerator Dash()
     {
-        _canDash = false;
-        _isDashing = true;
-        _rigidbody.velocity = new Vector2(_movementInput.x * _dashingPower, _movementInput.y * _dashingPower);
-        yield return new WaitForSeconds(dashingTime);
-        _isDashing = false;
-        yield return new WaitForSeconds(_dashingCooldown);
-        _canDash = true;
+        isDashing = true;
+        _rigidbody.velocity = new Vector2 (_moveDirection.x * dashSpeed, _moveDirection.y * dashSpeed);
+        yield return new WaitForSeconds(dashDuration);
+        isDashing = false;
     }
-    
 }
 
