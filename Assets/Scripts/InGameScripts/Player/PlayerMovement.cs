@@ -35,7 +35,17 @@ public class PlayerMovement : MonoBehaviour
     {
         _rigidbody = GetComponent<Rigidbody2D>();
     }
-    
+
+    private void OnEnable()
+    {
+        HealthManager.onPlayerDeath += DisablePlayerMovement;
+
+    }
+    private void OnDisable()
+    {
+        HealthManager.onPlayerDeath -= DisablePlayerMovement;
+
+    }
     private void Update()
     {
         if (isDashing)
@@ -67,6 +77,7 @@ public class PlayerMovement : MonoBehaviour
         {
             return;
         }
+
         if (Mathf.Abs(moveX) > 0.1)
         {
 
@@ -139,6 +150,15 @@ public class PlayerMovement : MonoBehaviour
         _rigidbody.velocity = new Vector2 (_moveDirection.x * dashSpeed, _moveDirection.y * dashSpeed);
         yield return new WaitForSeconds(dashDuration);
         isDashing = false;
+    }
+
+    private void DisablePlayerMovement()
+    {
+        _rigidbody.bodyType = RigidbodyType2D.Static;
+    }
+    private void EnablePlayerMovement()
+    {
+        _rigidbody.bodyType = RigidbodyType2D.Dynamic;
     }
 }
 
