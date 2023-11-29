@@ -47,7 +47,7 @@ public class WireManager : MonoBehaviour
         if (correctWires == totalWires)
         {
             Debug.Log("Yay win");
-            Instantiate(prefab, transform.position, Quaternion.identity);
+            prefab.SetActive(true);
         }
     }
 
