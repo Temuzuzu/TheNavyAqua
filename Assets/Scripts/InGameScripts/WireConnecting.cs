@@ -67,6 +67,7 @@ public class WireConnecting : MonoBehaviour
         {
             if (rectTransform.eulerAngles.z <= correctRotation[0] + 5 && rectTransform.eulerAngles.z >= correctRotation[0] - 5 || rectTransform.eulerAngles.z <= correctRotation[1] + 5 && rectTransform.eulerAngles.z >= correctRotation[1] - 5 && isPlaced == false)
             {
+                Debug.Log("CheckPoint");
                 isPlaced = true;
                 wm.CorrectMove();
             }
