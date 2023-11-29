@@ -15,11 +15,11 @@ public class WireConnecting : MonoBehaviour
 
     int PossibleRots = 1;
 
-    WireManager wireManager;
+    WireManager wm;
 
     private void Awake()
     {
-        wireManager = GameObject.Find("GameManager").GetComponent<WireManager>();
+        wm = GameObject.Find("GameManager").GetComponent<WireManager>();
     }
 
     private void Start()
@@ -34,7 +34,7 @@ public class WireConnecting : MonoBehaviour
             if (rectTransform.eulerAngles.z <= correctRotation[0] + 5 && rectTransform.eulerAngles.z >= correctRotation[0] - 5 || rectTransform.eulerAngles.z <= correctRotation[1] + 5 && rectTransform.eulerAngles.z >= correctRotation[1] - 5)
             {
                 isPlaced = true;
-                wireManager.CorrectMove();
+                wm.CorrectMove();
             }
 
             else
@@ -42,7 +42,7 @@ public class WireConnecting : MonoBehaviour
                 if (rectTransform.eulerAngles.z <= correctRotation[0] + 5 && rectTransform.eulerAngles.z >= correctRotation[0] - 5)
                 {
                     isPlaced = true;
-                    wireManager.CorrectMove();
+                    wm.CorrectMove();
                 }
             }
         }
@@ -68,13 +68,13 @@ public class WireConnecting : MonoBehaviour
             if (rectTransform.eulerAngles.z <= correctRotation[0] + 5 && rectTransform.eulerAngles.z >= correctRotation[0] - 5 || rectTransform.eulerAngles.z <= correctRotation[1] + 5 && rectTransform.eulerAngles.z >= correctRotation[1] - 5 && isPlaced == false)
             {
                 isPlaced = true;
-                wireManager.CorrectMove();
+                wm.CorrectMove();
             }
 
             else if (isPlaced == true)
             {
                 isPlaced = false;
-                wireManager.WrongMove();
+                wm.WrongMove();
             }
         }
 
@@ -83,13 +83,13 @@ public class WireConnecting : MonoBehaviour
             if (rectTransform.eulerAngles.z <= correctRotation[0] + 5 && rectTransform.eulerAngles.z >= correctRotation[0] - 5 && isPlaced == false)
             {
                 isPlaced = true;
-                wireManager.CorrectMove();
+                wm.CorrectMove();
             }
 
             else if (isPlaced == true)
             {
                 isPlaced = false;
-                wireManager.WrongMove();
+                wm.WrongMove();
             }
         }
     }
