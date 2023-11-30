@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using TMPro;
 
 public class CoinCounter : MonoBehaviour
@@ -9,7 +10,8 @@ public class CoinCounter : MonoBehaviour
     public TMP_Text cointext;
     public int currentCoins = 0;
     public int totalCoins = 8;
-
+    private bool isFinished = false;
+    public bool interactable = false;
     public void Awake()
     {
         instance = this;
@@ -30,6 +32,25 @@ public class CoinCounter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (currentCoins >= 8)
+        {
+            isFinished = true;
+        }
+
+        if (interactable == true)
+        {
+            if (isFinished == true) 
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            }
+        }
+    }
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
+        interactable = true;
+    }
+    public void OnTriggerExit2D(Collider2D collision)
+    {
+        interactable = false;
     }
 }

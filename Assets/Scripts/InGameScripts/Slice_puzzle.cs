@@ -13,6 +13,7 @@ public class Slice_puzzle : MonoBehaviour
     public GameObject lockCanvas;
     [SerializeField] TileSlidePuzzle[] tiles;
     private int emptySpaceIndex = 8;
+    private bool _isfinished;
 
     // Start is called before the first frame update
     void Start()
@@ -24,6 +25,7 @@ public class Slice_puzzle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         if (coinCounter.currentCoins >= 8)
         {
             hasEnoughCoins = true;
@@ -34,7 +36,7 @@ public class Slice_puzzle : MonoBehaviour
             hasEnoughCoins = true;
             lockCanvas.SetActive(false);
         }
-
+        
         if (hasEnoughCoins == true)
         {
             if (Input.GetMouseButtonDown(0))
@@ -58,22 +60,37 @@ public class Slice_puzzle : MonoBehaviour
                 }
             }
         }
-        int correctTiles = 0;
-        foreach (var a in tiles)
+
+        if (!_isfinished)
         {
-            if (a != null)
+            int correctTiles = 0;
+            foreach (var a in tiles)
             {
-                if (a.inRightPlace) correctTiles++;
+                if (a != null)
+                {
+
+                    if (a.inRightPlace)
+                    {
+                        correctTiles++;
+                        
+                    }
+                }
             }
+
+            if (correctTiles == 8)
+            {
+                Debug.Log("CheckPoint03");
+                _isfinished = true;
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            }
+            Debug.Log(correctTiles);
         }
-        if( correctTiles == tiles.Length - 1)
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-        }
+        
     }
 
     public void Shuffle()
     {
+        
         if (emptySpaceIndex != 8)
         {
             var tileOn8LastPos = tiles[8].targetPosition;
@@ -83,10 +100,11 @@ public class Slice_puzzle : MonoBehaviour
             tiles = null;
             emptySpaceIndex = 8;
         }
+        
         int invertion;
         do
         {
-            for (int i = 0; i <= tiles.Length - 1; i++)
+            for (int i = 0; i <= 8; i++)
             {
                 var lastPos = tiles[i].targetPosition;
                 int randomIndex = Random.Range(0, tiles.Length - 2);
@@ -115,7 +133,7 @@ public class Slice_puzzle : MonoBehaviour
         }
         return -1;
     }
-
+    
     int GetInversions()
     {
         int inversionsSum = 0;
@@ -136,4 +154,5 @@ public class Slice_puzzle : MonoBehaviour
         }
         return inversionsSum;
     }
+    
 }

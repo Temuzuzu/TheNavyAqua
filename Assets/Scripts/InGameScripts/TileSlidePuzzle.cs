@@ -8,31 +8,34 @@ public class TileSlidePuzzle : MonoBehaviour
     private Vector3 correctPosition;
     private SpriteRenderer _sprite;
     public int number;
+    public int correctPlaced;
     public bool inRightPlace;
-
-    // Start is called before the first frame update
+    
     void Awake()
     {
-        targetPosition = transform.position;
         correctPosition = transform.position;
+        targetPosition = transform.position;
         _sprite = GetComponent<SpriteRenderer>();
+        Debug.Log(correctPosition);
+        
     }
 
-    // Update is called once per frame
     void Update()
     {
         transform.position = Vector3.Lerp(transform.position, targetPosition, 0.05f);
-
+        //Debug.Log(correctPosition);
         if (targetPosition == correctPosition)
         {
+            
             _sprite.color = Color.green;
             inRightPlace = true;
+            
         }
 
         else
         {
             _sprite.color = Color.white;
-            inRightPlace = false;
+            inRightPlace = false;            
         }
     }
 }
