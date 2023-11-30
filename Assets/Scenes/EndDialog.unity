@@ -123,6 +123,30 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &211462209 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9083554100169524705, guid: f371f2842e42b304dae5f56df947295c, type: 3}
+  m_PrefabInstance: {fileID: 8587386415847917739}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &211462210
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 211462209}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1718903d75b7a54a8598e151a94c7ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeToFadeIn: 2
+  timeToWait: 5
+  timeToFadeOut: 2
+  myUIGroup:
+  - {fileID: 1060513463}
+  - {fileID: 1509119387}
+  - {fileID: 1891644350}
 --- !u!1 &411366544
 GameObject:
   m_ObjectHideFlags: 0
@@ -391,6 +415,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7157620395931539968, guid: 90c488555d5c80d4fb9b8e778e6fa56f, type: 3}
   m_PrefabInstance: {fileID: 971264164}
   m_PrefabAsset: {fileID: 0}
+--- !u!225 &1060513463 stripped
+CanvasGroup:
+  m_CorrespondingSourceObject: {fileID: 3809981869313479024, guid: f371f2842e42b304dae5f56df947295c, type: 3}
+  m_PrefabInstance: {fileID: 8587386415847917739}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1061228219
 GameObject:
   m_ObjectHideFlags: 0
@@ -600,6 +629,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   retryMenu: {fileID: 0}
+--- !u!225 &1509119387 stripped
+CanvasGroup:
+  m_CorrespondingSourceObject: {fileID: 3711025951095358762, guid: f371f2842e42b304dae5f56df947295c, type: 3}
+  m_PrefabInstance: {fileID: 8587386415847917739}
+  m_PrefabAsset: {fileID: 0}
+--- !u!225 &1891644350 stripped
+CanvasGroup:
+  m_CorrespondingSourceObject: {fileID: 518096021872298429, guid: f371f2842e42b304dae5f56df947295c, type: 3}
+  m_PrefabInstance: {fileID: 8587386415847917739}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1913174458
 GameObject:
   m_ObjectHideFlags: 0
@@ -883,10 +922,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dialog
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 87082533133459471, guid: f371f2842e42b304dae5f56df947295c, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 9083554100169524705, guid: f371f2842e42b304dae5f56df947295c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 211462210}
   m_SourcePrefab: {fileID: 100100000, guid: f371f2842e42b304dae5f56df947295c, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
