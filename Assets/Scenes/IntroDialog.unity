@@ -577,6 +577,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7157620395931539968, guid: 90c488555d5c80d4fb9b8e778e6fa56f, type: 3}
   m_PrefabInstance: {fileID: 971264164}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &971264167 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 597063589760357650, guid: 90c488555d5c80d4fb9b8e778e6fa56f, type: 3}
+  m_PrefabInstance: {fileID: 971264164}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 942fce484d8158147b8bcf346fdeb66e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1061228219
 GameObject:
   m_ObjectHideFlags: 0
@@ -962,7 +973,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1408285747}
+      - m_Target: {fileID: 971264167}
         m_TargetAssemblyTypeName: SceneLoaderScript, Assembly-CSharp
         m_MethodName: LoadNextLevel
         m_Mode: 1
