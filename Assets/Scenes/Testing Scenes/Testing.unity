@@ -870,7 +870,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   emptySpace: {fileID: 1140474482}
-  distance: 1.25
+  distance: 22
   coinCounter: {fileID: 519420034}
   lockCanvas: {fileID: 1430742436}
   tiles:
@@ -1482,6 +1482,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1324865050167477577, guid: fa0ec569a7322a943ab2a621c970c30c, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1582072749308940856, guid: fa0ec569a7322a943ab2a621c970c30c, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1638435319804633392, guid: fa0ec569a7322a943ab2a621c970c30c, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.5
@@ -1534,6 +1542,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1919050512963973801, guid: fa0ec569a7322a943ab2a621c970c30c, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2181540962760592115, guid: fa0ec569a7322a943ab2a621c970c30c, type: 3}
       propertyPath: m_IsTrigger
       value: 0
@@ -1541,6 +1553,10 @@ PrefabInstance:
     - target: {fileID: 2461346695552590458, guid: fa0ec569a7322a943ab2a621c970c30c, type: 3}
       propertyPath: m_Name
       value: tile slide puzzle (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3584658145336588281, guid: fa0ec569a7322a943ab2a621c970c30c, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3832546649369534870, guid: fa0ec569a7322a943ab2a621c970c30c, type: 3}
       propertyPath: m_IsTrigger
@@ -1558,9 +1574,21 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6924516386531631249, guid: fa0ec569a7322a943ab2a621c970c30c, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6958307317428403878, guid: fa0ec569a7322a943ab2a621c970c30c, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7107659926393218960, guid: fa0ec569a7322a943ab2a621c970c30c, type: 3}
       propertyPath: m_IsTrigger
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7291045661932571183, guid: fa0ec569a7322a943ab2a621c970c30c, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7642093386437149873, guid: fa0ec569a7322a943ab2a621c970c30c, type: 3}
       propertyPath: m_IsTrigger
@@ -1569,6 +1597,10 @@ PrefabInstance:
     - target: {fileID: 8148756155752527970, guid: fa0ec569a7322a943ab2a621c970c30c, type: 3}
       propertyPath: m_IsTrigger
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8457008265080376869, guid: fa0ec569a7322a943ab2a621c970c30c, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
