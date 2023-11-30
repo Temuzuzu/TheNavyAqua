@@ -5,31 +5,30 @@ using UnityEngine;
 using UnityEngine.UI;
 public class Hints : MonoBehaviour
 {
-    public GameObject hint;
-    public bool playerIsClosed = false;
-    private void Update()
+    public GameObject HintText;
+    public bool interactable = false;
+    void Update()
     {
-        if (playerIsClosed == true)
+        if (Input.GetKeyDown(KeyCode.E))
         {
-            hint.SetActive(true);
-        }
-        else
-        {
-            hint.SetActive(false);
+            Interact();
         }
     }
-    private void OnTriggerEnter2D(Collider2D collision)
+    public void Interact()
     {
-        if (collision.CompareTag("Player") && Input.GetKeyDown(KeyCode.E))
-        {
-            playerIsClosed = true;
-        }
+        if (interactable)
+            HintText.SetActive(true);
     }
-    private void OnTriggerExit2D(Collider2D collision)
+    public void StopInteract()
     {
-        if (collision.CompareTag("Player"))
-        {
-            playerIsClosed = false;
-        }
+        HintText.SetActive(false);
+    }
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
+        interactable = true;
+    }
+    public void OnTriggerExit2D(Collider2D collision)
+    {
+        interactable = false;
     }
 }
