@@ -870,7 +870,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   emptySpace: {fileID: 1140474482}
-  distance: 2
+  distance: 22
   coinCounter: {fileID: 519420034}
   lockCanvas: {fileID: 1430742436}
   tiles:
