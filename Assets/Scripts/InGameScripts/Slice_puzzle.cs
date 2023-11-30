@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Slice_puzzle : MonoBehaviour
 {
@@ -67,7 +68,7 @@ public class Slice_puzzle : MonoBehaviour
         }
         if( correctTiles == tiles.Length - 1)
         {
-            Debug.Log("You won");
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }
 
